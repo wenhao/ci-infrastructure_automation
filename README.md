@@ -1,4 +1,4 @@
-## Toppro Infrastructure Automation
+## CI Infrastructure Automation
 
 ### Prerequisites
 
