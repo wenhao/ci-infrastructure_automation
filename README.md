@@ -51,3 +51,8 @@
         https: true
     ```
 4. `gitalb-ctl restart`.
+
+### Install Nginx
+
+1. `ansible-galaxy install geerlingguy.nginx`.
+2. `ansible-playbook nginx.yml -l nginx`.
