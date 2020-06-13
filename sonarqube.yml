@@ -1,0 +1,21 @@
+- hosts: sonarqube
+  remote_user: root
+  vars:
+    java_packages:
+      - java-1.8.0-openjdk
+    sonar_version: 7.7
+    sonar_db_embedded: false
+    sonar_db_user: toppro_sonar
+    sonar_db_pass: jiker_Toppro_sonar123123
+    sonar_jdbc_url: "jdbc:mysql://192.168.0.5:3306/sonarqube?useUnicode=true&characterEncoding=utf8&rewriteBatchedStatements=true&useConfigs=maxPerformance"
+    sonar_web_port: 8080
+  pre_tasks:
+    - name: Install package dependencies.
+      package:
+        name: "{{ item }}"
+        state: "present"
+      with_items:
+        - unzip
+  roles:
+    - geerlingguy.java
+    - lrk.sonarqube

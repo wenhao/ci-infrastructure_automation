@@ -1,0 +1,13 @@
+- hosts: jenkins
+  remote_user: root
+  vars:
+    jenkins_hostname: localhost
+    jenkins_http_port: 7070
+    jenkins_process_user: root
+    jenkins_process_group: root
+    jenkins_java_options: "-Djenkins.install.runSetupWizard=true -Dorg.apache.commons.jelly.tags.fmt.timeZone=Asia/Shanghai"
+  roles:
+    - role: geerlingguy.jenkins
+      become: yes
+    - role: geerlingguy.git
+    - role: geerlingguy.docker

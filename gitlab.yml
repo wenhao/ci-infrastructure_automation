@@ -1,0 +1,7 @@
+- hosts: gitlab
+  remote_user: root
+  vars:
+    gitlab_domain: "http://gitlab.ketsu.cn"
+    gitlab_time_zone: "Asia/Shanghai"
+  roles:
+    - role: geerlingguy.gitlab
